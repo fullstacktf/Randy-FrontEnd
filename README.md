@@ -1,10 +1,9 @@
 # Venue Designer :soon: 
 
-*Proyecto enfocado a ser una herramienta intuitiva para empresarios que quieran diseñar los espacios delimitados de sus eventos en los recintos donde celebrarán el acto*
+*Proyecto enfocado a ser una herramienta intuitiva para el entorno familiar, ayudar a organizar tareas hacer en el hogar así como compartir facturas en caso de vivir con gente compartiendo piso, como apuntar eventos importantes en el calendario incorporado. Y también tener la opción de tener una lista de la compra*
 
 
-## Equipo: :woman_technologist: :man_technologist:
-[@Mayra](https://github.com/mayragarciaac)
+## Equipo: :man_technologist::man_technologist:
 
 [@Carlos M.](https://github.com/AnnwynDev)
 
@@ -17,4 +16,4 @@
 
 ## Diseño :hear_no_evil:
 
-[Proyecto en Figma](https://www.figma.com/file/iEpQmrehncnZuxQ83IuMsv/Main-Menu?node-id=0%3A1)
+[Proyecto en Figma](https://www.figma.com/file/sjkbS1SuyS8MIUh0w4WmRN/Web-Desktop?node-id=0%3A1)
