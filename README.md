@@ -32,8 +32,8 @@
 
 | Feature  | Description |
 |----------|-------------|
-|:atom_symbol::react: [React](https://es.reactjs.org/) |Librería para crear interfaces de usuarios |
-|:ballot_box_with_check	::jestjs: [Jest](https://jestjs.io/) |Framework para hacer testear el código de Javascript|
+|:atom_symbol: [React](https://es.reactjs.org/) |Librería para crear interfaces de usuarios |
+|:white_check_mark: [Jest](https://jestjs.io/) |Framework para hacer testear el código de Javascript|
 | 💼 [Babel](https://babeljs.io/) | Transpila Javascript a ES5. |
 | 🎁 [preset-env](https://babeljs.io/docs/en/babel-preset-env) | Entorno para escribir  ES2015+ (ES6/ES7/ES8) Javascript. |
 | 🌎 [Browserlist](https://browserl.ist/) | Compatibiliza con determinados navegadores |
