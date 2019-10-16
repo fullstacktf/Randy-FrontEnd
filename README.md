@@ -17,3 +17,37 @@
 ## Diseño :hear_no_evil:
 
 [Proyecto en Figma](https://www.figma.com/file/sjkbS1SuyS8MIUh0w4WmRN/Web-Desktop?node-id=0%3A1)
+
+## Características
+
+### Organizadores
+
+| Característica | Descripción|
+| -------- | -------- |
+| 📦 [Webpack](https://webpack.js.org/)|Empaquetador automático |
+| ⚙️ [NPM Scripts](https://docs.npmjs.com/misc/scripts) | Spcripts precofigurados |
+
+
+### Javascript
+
+| Feature  | Description |
+|----------|-------------|
+|:atom_symbol::react: [React](https://es.reactjs.org/) |Librería para crear interfaces de usuarios |
+|:ballot_box_with_check	::jestjs: [Jest](https://jestjs.io/) |Framework para hacer testear el código de Javascript|
+| 💼 [Babel](https://babeljs.io/) | Transpila Javascript a ES5. |
+| 🎁 [preset-env](https://babeljs.io/docs/en/babel-preset-env) | Entorno para escribir  ES2015+ (ES6/ES7/ES8) Javascript. |
+| 🌎 [Browserlist](https://browserl.ist/) | Compatibiliza con determinados navegadores |
+| 👁️ [ESLint](https://eslint.org/) | Revisa el código en Javascript, trucos y evitar errores |
+
+
+### NPM Scripts
+
+|Comando NPM | Descripción |
+|------------|-------------|
+| `npm run dev`   | Corre el servidor en local para modo desarrollo (serve + watch) |
+| `npm run test`   | Ejecuta los test |
+| `npm run test:watch`   | Ejecuta los test de manera continua |
+
+
+
+
