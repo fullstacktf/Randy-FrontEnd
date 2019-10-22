@@ -12,11 +12,11 @@
 ## Página principal 
 :construction_worker::construction:En construcción...:construction::construction_worker_woman:
 
-[Venue-designer](https://#)
+[Randy-designer](https://#)
 
 ## Diseño :hear_no_evil:
 
-[Proyecto en Figma](https://www.figma.com/file/sjkbS1SuyS8MIUh0w4WmRN/Web-Desktop?node-id=0%3A1)
+[Proyecto en Figma](https://www.figma.com/proto/sjkbS1SuyS8MIUh0w4WmRN/Web-Desktop?node-id=21%3A206&viewport=-240%2C865%2C1.367720365524292&scaling=scale-down-width)
 
 ## Características
 
