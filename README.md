@@ -1,6 +1,6 @@
-# Venue Designer :soon: 
+# Randy-Frontend :soon: 
 
-*Proyecto enfocado a ser una herramienta intuitiva para el entorno familiar, ayudar a organizar tareas hacer en el hogar así como compartir facturas en caso de vivir con gente compartiendo piso, como apuntar eventos importantes en el calendario incorporado. Y también tener la opción de tener una lista de la compra*
+*Proyecto enfocado a ser una herramienta intuitiva para el entorno familiar, o personas que comparten piso, para ayudar a organizar tareas que hacer en el hogar así como compartir facturas, apuntar eventos importantes en el calendario incorporado, y también tener la opción de tener una lista de la compra*
 
 
 ## Equipo: :man_technologist::man_technologist:
