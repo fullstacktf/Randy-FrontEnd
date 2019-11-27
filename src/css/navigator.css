@@ -1,0 +1,18 @@
+.container {
+  background: #484848;
+  max-width: 100px;
+  min-height: 100vh;
+  /* width: 100px; */
+  /* height: 100vh; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon {
+  max-width: 40px;
+  min-width: 40px;
+  margin: 20px;
+}

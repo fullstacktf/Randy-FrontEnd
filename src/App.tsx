@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './css/App.css';
+import Navigator from './components/navigator/navigator';
 
 const App: React.FC = () => {
   return (
     <div className="App">
 
-
+      <Navigator></Navigator>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
