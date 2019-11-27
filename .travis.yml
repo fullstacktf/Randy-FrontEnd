@@ -1,0 +1,15 @@
+language: node_js
+nodejs:
+- stable
+branches:
+  only:
+  - master
+env:
+  global:
+  - REMOTE_PATH=/var/www/Randy-FrontEnd
+  - REMOTE_USER=travis
+  - REMOTE_HOST=raivencorps.me
+before_install:
+- bash scripts/install.sh
+after_success:
+- bash scripts/deploy.sh
