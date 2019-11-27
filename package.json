@@ -1,20 +1,36 @@
 {
-  "name": "EncloserGen-FrontEnd",
-  "version": "1.0.0",
-  "description": "*Proyecto enfocado a ser una herramienta intuitiva para empresarios que quieran diseñar los espacios delimitados de sus eventos en los recintos donde celebrarán el acto*",
-  "main": "index.js",
+  "name": "randy_fron-end",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.14",
+    "@types/react": "16.9.13",
+    "@types/react-dom": "16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0",
+    "typescript": "3.7.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fullstacktf/EncloserGen-FrontEnd.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [],
-  "author": "Rubén Zagon & Carlos M.",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fullstacktf/EncloserGen-FrontEnd/issues"
-  },
-  "homepage": "https://github.com/fullstacktf/EncloserGen-FrontEnd#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
