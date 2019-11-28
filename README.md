@@ -1,3 +1,5 @@
+[![Build Status master](https://travis-ci.org/fullstacktf/Randy-FrontEnd.svg?branch=master)](https://travis-ci.org/fullstacktf/Randy-FrontEnd) | [![Develop Status](https://travis-ci.org/fullstacktf/Randy-FrontEnd.svg?branch=develop)](https://travis-ci.org/fullstacktf/Randy-FrontEnd)
+
 # Randy-Frontend :soon: 
 
 *Proyecto enfocado a ser una herramienta intuitiva para el entorno familiar, o personas que comparten piso, para ayudar a organizar tareas que hacer en el hogar así como compartir facturas, apuntar eventos importantes en el calendario incorporado, y también tener la opción de tener una lista de la compra*
