@@ -6,7 +6,7 @@ branches:
   - develop
 env:
   global:
-  - REMOTE_PATH=/var/www/Randy-FrontEnd
+  - REMOTE_PATH=/var/www/raivencorps.me/Randy-FrontEnd
   - REMOTE_USER=travis
   - REMOTE_HOST=raivencorps.me
 before_install:

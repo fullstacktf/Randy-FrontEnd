@@ -3,7 +3,7 @@
 echo "Deploying on digitalocean"
 
 COMMAND="cd ${REMOTE_PATH} && \
-        git pull && \
+        sudo git pull && \
         rm -rf build/* && \
         npm run build"
 
