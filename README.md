@@ -12,7 +12,7 @@
 ## Página principal 
 :construction_worker::construction:En construcción...:construction::construction_worker_woman:
 
-[Randy-designer](https://#)
+[Randy-designer](https://raivencorps.me)
 
 ## Diseño :hear_no_evil:
 
@@ -22,31 +22,34 @@
 
 ### Organizadores
 
-| Característica | Descripción|
-| -------- | -------- |
-| 📦 [Webpack](https://webpack.js.org/)|Empaquetador automático |
+| Característica                                        | Descripción             |
+| ----------------------------------------------------- | ----------------------- |
+| 📦 [Webpack](https://webpack.js.org/)                 | Empaquetador automático |
 | ⚙️ [NPM Scripts](https://docs.npmjs.com/misc/scripts) | Spcripts precofigurados |
+
+### CI-CD
+| Característica                         | Descripción                               |
+| -------------------------------------- | ----------------------------------------- |
+| 📦 [Travis-CI](https://travis-ci.org/) | Test de integración y despliegue continuo |
 
 
 ### Javascript
 
-| Feature  | Description |
-|----------|-------------|
-|:atom_symbol: [React](https://es.reactjs.org/) |Librería para crear interfaces de usuarios |
-|:white_check_mark: [Jest](https://jestjs.io/) |Framework para hacer testear el código de Javascript|
-| 💼 [Babel](https://babeljs.io/) | Transpila Javascript a ES5. |
-| 🎁 [preset-env](https://babeljs.io/docs/en/babel-preset-env) | Entorno para escribir  ES2015+ (ES6/ES7/ES8) Javascript. |
-| 🌎 [Browserlist](https://browserl.ist/) | Compatibiliza con determinados navegadores |
-| 👁️ [ESLint](https://eslint.org/) | Revisa el código en Javascript, trucos y evitar errores |
+| Feature                                        | Description                                                       |
+| ---------------------------------------------- | ----------------------------------------------------------------- |
+| :atom_symbol: [React](https://es.reactjs.org/) | Librería para crear interfaces de usuarios                        |
+| :white_check_mark: [Jest](https://jestjs.io/)  | Framework para hacer testear el código de Javascript              |
+| [TypeScript](https://www.typescriptlang.org/)  | Ayuda a tipar JavaScript y compila a JavaScript el lenguaje final |
+| 👁️ [ESLint](https://eslint.org/)              | Revisa el código en Javascript, trucos y evitar errores           |
 
 
 ### NPM Scripts
 
-|Comando NPM | Descripción |
-|------------|-------------|
-| `npm run dev`   | Corre el servidor en local para modo desarrollo (serve + watch) |
-| `npm run test`   | Ejecuta los test |
-| `npm run test:watch`   | Ejecuta los test de manera continua |
+| Comando NPM     | Descripción                                                |
+| --------------- | ---------------------------------------------------------- |
+| `npm run start` | Corre el servidor en local para modo desarrollo            |
+| `npm run test`  | Ejecuta los test                                           |
+| `npm run build` | Compila los archivos y genera una carpeta "dist" con ellos |
 
 
 
