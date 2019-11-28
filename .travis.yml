@@ -1,15 +1,15 @@
 language: node_js
 nodejs:
-- stable
+  - stable
 branches:
   only:
-  - develop
+    - master
 env:
   global:
-  - REMOTE_PATH=/var/www/Randy-FrontEnd
-  - REMOTE_USER=travis
-  - REMOTE_HOST=raivencorps.me
+    - REMOTE_PATH=/var/www/raivencorps.me/Randy-FrontEnd
+    - REMOTE_USER=travis
+    - REMOTE_HOST=raivencorps.me
 before_install:
-- bash scripts/install.sh
+  - bash scripts/install.sh
 after_success:
-- bash scripts/deploy.sh
+  - bash scripts/deploy.sh
