@@ -2,6 +2,7 @@
   "name": "randy_fron-end",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://raivencorps.me/",
   "dependencies": {
     "@types/jest": "24.0.23",
     "@types/node": "12.12.14",
