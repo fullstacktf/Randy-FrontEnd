@@ -20,7 +20,7 @@ class Icon extends React.Component<IconProps, IconState> {
 
   handleColor() {
     this.setState({
-      isSelected: this.state.isSelected
+      isSelected: "#47AB43"
     })
   }
 
@@ -36,5 +36,6 @@ class Icon extends React.Component<IconProps, IconState> {
       </svg>
     )
   }
+
 }
 export default Icon;
