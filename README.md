@@ -40,12 +40,13 @@
 
 ### Javascript
 
-| Feature                                        | Description                                                       |
-| ---------------------------------------------- | ----------------------------------------------------------------- |
-| :atom_symbol: [React](https://es.reactjs.org/) | Librería para crear interfaces de usuarios                        |
-| :white_check_mark: [Jest](https://jestjs.io/)  | Framework para hacer testear el código de Javascript              |
-| [TypeScript](https://www.typescriptlang.org/)  | Ayuda a tipar JavaScript y compila a JavaScript el lenguaje final |
-| 👁️ [ESLint](https://eslint.org/)              | Revisa el código en Javascript, trucos y evitar errores           |
+| Feature                                            | Description                                                       |
+| -------------------------------------------------- | ----------------------------------------------------------------- |
+| :atom_symbol: [React](https://es.reactjs.org/)     | Librería para crear interfaces de usuarios                        |
+| :white_check_mark: [Jest](https://jestjs.io/)      | Framework para hacer testear el código de Javascript              |
+| [TypeScript](https://www.typescriptlang.org/)      | Ayuda a tipar JavaScript y compila a JavaScript el lenguaje final |
+| 👁️ [ESLint](https://eslint.org/)                  | Revisa el código en Javascript, trucos y evitar errores           |
+| 💅 [Emotion](https://emotion.sh/docs/introduction) | Librería para diseñar CSS en Javascript                           |
 
 
 ### NPM Scripts
