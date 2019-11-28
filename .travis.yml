@@ -3,7 +3,7 @@ nodejs:
 - stable
 branches:
   only:
-  - master
+  - develop
 env:
   global:
   - REMOTE_PATH=/var/www/Randy-FrontEnd
