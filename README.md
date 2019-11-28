@@ -1,4 +1,7 @@
-[![Build Status master](https://travis-ci.org/fullstacktf/Randy-FrontEnd.svg?branch=master)](https://travis-ci.org/fullstacktf/Randy-FrontEnd) | [![Develop Status](https://travis-ci.org/fullstacktf/Randy-FrontEnd.svg?branch=develop)](https://travis-ci.org/fullstacktf/Randy-FrontEnd)
+
+| Rama   | Testing                                                                                                                                        |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| master | [![Build Status master](https://travis-ci.org/fullstacktf/Randy-FrontEnd.svg?branch=master)](https://travis-ci.org/fullstacktf/Randy-FrontEnd) |
 
 # Randy-Frontend :soon: 
 
