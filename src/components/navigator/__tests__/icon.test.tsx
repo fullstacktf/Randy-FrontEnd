@@ -4,7 +4,7 @@ import Icon from '../icon';
 import dashboard from "../../../assets/icon-dashboard.svg"
 
 
-describe("Icons", () => {
+xdescribe("Icons", () => {
   describe("Render", () => {
     test("Should render a svg icon", () => {
       const wrapper = shallow(<Icon name={dashboard}></Icon>);
