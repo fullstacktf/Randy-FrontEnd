@@ -1,13 +1,13 @@
 import React from "react";
-import { css } from 'emotion';
-import './hello.css'
+import { css } from "emotion";
+import "./hello.css";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
-`)
+`);
 
 const avatarCSS = css`
   max-width: auto;
@@ -16,7 +16,7 @@ const avatarCSS = css`
   &:hover {
     max-width: 50;
   }
-`
+`;
 
 const imageCSS = css`
   // background: blue;
@@ -24,10 +24,9 @@ const imageCSS = css`
   max-height: 100px;
   margin-left: 20px;
   clip-path: circle(2em at center);
-`
+`;
 
 export const Hello = ({ name, srcAvatar }) => {
-
   const photo: boolean = false;
 
   let avatarPrint = (
@@ -42,18 +41,14 @@ export const Hello = ({ name, srcAvatar }) => {
     </svg>
   );
 
-
   if (photo) {
-    avatarPrint = <img className={imageCSS} src={srcAvatar} alt="Avatar" />
+    avatarPrint = <img className={imageCSS} src={srcAvatar} alt="Avatar" />;
   }
 
-
-  return <div className={helloContainer}>
-    <h3>Hola {name}</h3>
-    <div className={avatarCSS}>
-      {avatarPrint}
+  return (
+    <div className={helloContainer}>
+      <h3>Hola {name}</h3>
+      <div className={avatarCSS}>{avatarPrint}</div>
     </div>
-  </div>
-
-}
-
+  );
+};
