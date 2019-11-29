@@ -1,20 +1,31 @@
 import React from 'react';
 import './css/App.css';
 import Navigator from './components/navigator/navigator';
-import { Hello } from './components/hello/hello'
+import { Header } from './components/header/header';
+import { css } from 'emotion';
 
+const appCSS = css(`
+  display:grid;
+  grid-template-columns: 80px 90%;
+`)
 
-const HelloProps = {
-  name: "Carlos",
-  srcAvatar: './assets/avatar-man-1.jpg'
+const appMovil = css(`
+  display:grid;
+  grid-template-columns: 80px 90%;
+`)
+
+/*
+let windowWith = window.innerWidth()
+
+if (windowWith =< 360) {
+
 }
-
-
+*/
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Hello {...HelloProps} />
+    <div className={appCSS}>
       <Navigator></Navigator>
+      <Header></Header>
     </div>
   );
 }

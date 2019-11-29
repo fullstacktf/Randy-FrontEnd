@@ -1,0 +1,13 @@
+.prueba {
+  max-width: 100px;
+  max-height: auto;
+  display: flex;
+  flex-direction: row;
+  clip-path: circle(60px at center);
+  background: red;
+  margin-left: 10px;
+  font-family: Mo;
+  justify-content: space-between;
+  align-content: center;
+  margin-right: 50px;
+}
