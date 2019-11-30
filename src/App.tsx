@@ -1,26 +1,14 @@
-import React from 'react';
-import './css/App.css';
-import Navigator from './components/navigator/navigator';
-import { Header } from './components/header/header';
-import { css } from 'emotion';
+import React from "react";
+import "./css/App.css";
+import Navigator from "./components/navigator/navigator";
+import { Header } from "./components/header/header";
+import { css } from "emotion";
 
 const appCSS = css(`
   display:grid;
   grid-template-columns: 80px 90%;
-`)
+`);
 
-const appMovil = css(`
-  display:grid;
-  grid-template-columns: 80px 90%;
-`)
-
-/*
-let windowWith = window.innerWidth()
-
-if (windowWith =< 360) {
-
-}
-*/
 const App: React.FC = () => {
   return (
     <div className={appCSS}>
@@ -28,6 +16,6 @@ const App: React.FC = () => {
       <Header></Header>
     </div>
   );
-}
+};
 
 export default App;
