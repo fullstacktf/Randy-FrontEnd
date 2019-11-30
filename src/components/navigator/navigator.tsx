@@ -1,16 +1,18 @@
 import * as React from "react";
 import "./navigator.css";
-import { DashboardSVG } from "./dashboardSVG";
 import { Icon } from "./icon";
 
-interface NavigatorProps { }
+interface NavigatorProps {}
 
 class Navigator extends React.Component {
   render() {
     return (
       <div className="container">
-        <Icon name="calendar" />
-        <DashboardSVG></DashboardSVG>
+        <Icon name="dashboard"></Icon>
+        <Icon name="calendar"></Icon>
+        <Icon name="tasklist"></Icon>
+        <Icon name="bill"></Icon>
+        <Icon name="settings"></Icon>
       </div>
     );
   }
