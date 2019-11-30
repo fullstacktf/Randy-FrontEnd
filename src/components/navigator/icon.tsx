@@ -2,6 +2,11 @@ import React, { FC, useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 
+// Primary : #FFFFF
+// Secundary : #EAEAEA  | #7DF779
+// Selected : #47AB43
+// Background: #484848
+
 type iconName = "dashboard" | "calendar" | "tasklist" | "bill" | "settings";
 
 const InHoverAnimation = keyframes`
@@ -35,11 +40,6 @@ const DivIcon = styled.div`
     }
   }
 `;
-
-// Primary : #FFFFF
-// Secundary : #EAEAEA  | #7DF779
-// Selected : #47AB43
-// Background: #484848
 
 interface IconProps {
   name: iconName;
@@ -113,6 +113,6 @@ export const Icon: FC<IconProps> = ({ name }) => {
         </DivIcon>
       );
     default:
-      return <div>NO ESTOY IMPRIMIENDO NADA</div>;
+      return <p>Error al renderizar el icono</p>;
   }
 };

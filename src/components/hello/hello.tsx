@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import "./hello.css";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
