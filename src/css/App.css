@@ -20,3 +20,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+.containerNagigator {
+  background: orange;
+}
+
+.containerBody {
+  background: green;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}

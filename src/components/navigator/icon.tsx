@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import styled from "@emotion/styled";
-import { keyframes, css } from "@emotion/core";
+import { keyframes } from "@emotion/core";
 import "./navigator.css";
 
 // Primary : #FFFFF

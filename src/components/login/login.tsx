@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "@emotion/styled";
 
 const Form = styled.form`
-  //background: lightgrey;
+  background: white;
   border: 1px solid #eaeaea;
   border-radius: 20px;
   max-width: 400px;
