@@ -13,3 +13,9 @@
   min-width: 40px;
   margin: 20px;
 }
+
+.isActive {
+  fill: red;
+}
+
+/* fill: #7df779; */
