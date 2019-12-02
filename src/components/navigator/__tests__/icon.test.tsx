@@ -1,19 +1,38 @@
 import * as React from "react";
-import { shallow, mount, render } from "enzyme";
+import { shallow } from "enzyme";
 import { Icon } from "../icon";
 
+class IconTest {
+  private wrapper;
+
+  constructor(component) {
+    this.wrapper = shallow(component);
+  }
+
+  click() {
+    this.wrapper.find('svg').parent().simulate("click");
+  }
+
+  getIconColor() {
+    return this.wrapper.find('rect').at(0).prop('fill');
+  }
+}
+
 describe("Icons", () => {
-  describe("Render", () => {
+  xdescribe("Render", () => {
     test("Should render a svg icon", () => {
       const wrapper = shallow(<Icon name="dashboard"></Icon>);
       expect(wrapper.exists("svg")).toBeTruthy();
     });
   });
   describe("Animations", () => {
-    xtest("If the icon is clicked, then it changes the color to green", () => {
-      const wrapper = shallow(<Icon name="dashboard"></Icon>);
-      wrapper.find("svg").simulate("click");
-      expect(wrapper("isSelected")).toEqual("#47AB43");
+    test("If the icon is clicked, then it changes the color to green", () => {
+      const iconTest = new IconTest(<Icon name="dashboard"/>);
+      expect(iconTest.getIconColor()).toBe('#FFFFFF');
+      iconTest.click();
+      expect(iconTest.getIconColor()).toBe('#47AB43');
     });
   });
 });
+
+
