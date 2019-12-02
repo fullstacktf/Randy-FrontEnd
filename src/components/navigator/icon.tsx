@@ -52,7 +52,7 @@ export const Icon: FC<IconProps> = ({ name }) => {
   const [color, setColor] = useState("#FFFFFF");
   const handleActive = () => {
     setMenuState(!menuActive);
-    setColor("#47AB43");
+    setColor(menuActive ? "white" : "#47AB43");
   };
 
   switch (name) {
