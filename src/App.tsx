@@ -42,17 +42,17 @@ const App: React.FC = () => {
     <Router>
       <Container>
         <div className="containerNagigator">
-          <Navigator />
+          <Navigator/>
         </div>
         <div className="page">
-          <HeaderTop />
+          <HeaderTop/>
           <div className="content">
-            <Route exact path="/" component={Home} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/calendar" component={Calendar} />
-            <Route path="/tasklist" component={Tasklist} />
-            <Route path="/bill" component={Bill} />
-            <Route path="/settings" component={Settings} />
+            <Route exact path="/" component={Home}/>
+            <Route path="/dashboard" component={Dashboard}/>
+            <Route path="/calendar" component={Calendar}/>
+            <Route path="/tasklist" component={Tasklist}/>
+            <Route path="/bill" component={Bill}/>
+            <Route path="/settings" component={Settings}/>
           </div>
         </div>
       </Container>
@@ -71,7 +71,7 @@ export default App;
         <div className="page">
           <HeaderTop></HeaderTop>
           <div className="content">
-            
+
           </div>
         </div>
       </Container>
