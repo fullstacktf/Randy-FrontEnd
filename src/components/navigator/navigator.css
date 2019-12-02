@@ -1,6 +1,5 @@
 .container {
   background: #484848;
-  max-width: 100px;
   min-height: 100vh;
 
   display: flex;
@@ -14,3 +13,9 @@
   min-width: 40px;
   margin: 20px;
 }
+
+.isActive {
+  fill: red;
+}
+
+/* fill: #7df779; */
