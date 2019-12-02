@@ -10,19 +10,19 @@ class Navigator extends React.Component {
     return (
       <div className="container">
         <Link to="/dashboard">
-          <Icon name="dashboard"></Icon>
+          <Icon name="dashboard" state="no-selected"></Icon>
         </Link>
         <Link to="/calendar">
-          <Icon name="calendar"></Icon>
+          <Icon name="calendar" state="no-selected"></Icon>
         </Link>
         <Link to="/tasklist">
-          <Icon name="tasklist"></Icon>
+          <Icon name="tasklist" state="no-selected"></Icon>
         </Link>
         <Link to="/bill">
-          <Icon name="bill"></Icon>
+          <Icon name="bill" state="no-selected"></Icon>
         </Link>
         <Link to="/settings">
-          <Icon name="settings"></Icon>
+          <Icon name="settings" state="no-selected"></Icon>
         </Link>
       </div>
     );
