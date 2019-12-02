@@ -74,7 +74,7 @@ interface LoginFormProps {}
 
 export const LoginForm: FC<LoginFormProps> = () => {
   return (
-    <Form action="action_page.js" method="post">
+    <Form action="/user" method="post">
       <Container>
         <div>
           <h1>LOGIN</h1>
