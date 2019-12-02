@@ -6,11 +6,10 @@ import { HeaderTop } from "./components/header/header";
 import { LoginForm } from "./components/login/login";
 
 const Container = styled.div`
+background: white;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background: blue;
+  justify-content: flex-start;
 `;
 // display: grid;
 // //grid-template-columns: 80px 90%;
@@ -37,9 +36,11 @@ const App: React.FC = () => {
       <div className="containerNagigator">
         <Navigator></Navigator>
       </div>
-      <div className="containerBody">
+      <div className="page">
         <HeaderTop></HeaderTop>
-        <LoginForm />
+        <div className="content">
+          <LoginForm />
+        </div>
       </div>
     </Container>
   );
