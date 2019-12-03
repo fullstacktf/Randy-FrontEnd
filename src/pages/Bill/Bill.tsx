@@ -1,6 +1,5 @@
-import React, { FC, useState } from "react";
-import styled from "@emotion/styled";
+import React, { FC } from "react";
 
 export const Bill: FC = () => {
-  return <h1>Hola, soy la faturasión 💸 </h1>;
+  return <h1>Hola, soy la faturasión <span role="img" aria-label="icon">💸</span>  </h1>;
 };

@@ -1,12 +1,10 @@
 import * as React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Provider } from 'react-redux';
+import { NavLink } from "react-router-dom";
 import "./navigator.css";
 import { Icon } from "./icon";
 import { useState } from "react";
 
-interface NavigatorProps {
-}
+
 
 const NavIcon = ({ to, name }) => {
   const [isActive, setIsActive] = useState(false);

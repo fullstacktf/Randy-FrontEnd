@@ -1,7 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import styled from "@emotion/styled";
-import { AppState } from "../../reducers";
 
 const CircleNotifys = styled.div`
   background: red;
@@ -31,14 +30,6 @@ const ButtonNotify = styled.button`
     opacity: 0.8;
   }
 `;
-const mapStateToProps = (state: AppState) => {
-  return { counter: state.notifys.value };
-};
-
-const mapDispatchToProps = dispatch => ({
-  newNotify: (value: number) => dispatch()
-});
-
 interface NotifyProps {
   counter: ReturnType<() => number>;
 }
@@ -67,4 +58,3 @@ class CircleOfNotifys extends React.Component<NotifyProps, {}> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CircleOfNotifys);
