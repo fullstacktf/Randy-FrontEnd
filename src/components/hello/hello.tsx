@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import styled from "@emotion/styled";
+import { connect } from 'react-redux'
 import { AppState } from "../../reducers";
 import { NewNotify } from "../../actions";
 
@@ -8,7 +9,7 @@ const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
 `);
 
 const avatarCSS = css`
@@ -21,7 +22,6 @@ const avatarCSS = css`
 `;
 
 const imageCSS = css`
-  // background: blue;
   max-width: auto;
   max-height: 100px;
   margin-left: 20px;
@@ -42,6 +42,25 @@ cursor: pointer;
 }
 `;
 
+const CircleNotifys = styled.div`
+background: red;
+color: white;
+border-radius:50%;
+border: 5px solid white;
+width: 25px;
+height: 25px;
+display: flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+z-index:5;
+transform: translate(55px, 20px);
+`
+
+function newNotify() {
+  //store.dispatch(NewNotify(1))
+}
+
 export const Hello = ({ name, srcAvatar }) => {
   const photo: boolean = false;
 
@@ -61,19 +80,20 @@ export const Hello = ({ name, srcAvatar }) => {
     avatarPrint = <img className={imageCSS} src={srcAvatar} alt="Avatar" />;
   }
 
+
   return (
     <div className={helloContainer}>
-      <ButtonNotify>+1 notificación test</ButtonNotify>
+      {/* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify> */}
       <h3>Hola {name}</h3>
-      <div className={avatarCSS}>{avatarPrint}</div>
+      <div>
+        {/* <CircleNotifys>1</CircleNotifys> */}
+        <div className={avatarCSS}>{avatarPrint}</div>
+      </div>
     </div>
   );
 };
 
 
-function newNotify() {
-  store.dispatch(NewNotify(1))
-}
 
 
 const mapStateToProps = (state: AppState) => {
@@ -81,5 +101,7 @@ const mapStateToProps = (state: AppState) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-
+  //newNotify: (value: number) => dispatch(newNotify(value))
 })
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hello);
