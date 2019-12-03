@@ -1,5 +1,8 @@
-import * as Redux from "redux";
-import rootReducer, { AppState } from "../reducers";
+import {userReducer} from './reducers/userReducer'
+import { combineReducers } from 'redux'
 
-const store: Redux.Store<AppState> = Redux.createStore(rootReducer);
-export default store;
+export const rootReducer = combineReducers({
+  userReducer
+})
+
+export type RootState = ReturnType<typeof rootReducer>

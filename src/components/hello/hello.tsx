@@ -1,9 +1,6 @@
 import React from "react";
 import { css } from "emotion";
 import styled from "@emotion/styled";
-import { connect } from "react-redux";
-import { AppState } from "../../reducers";
-import CircleOfNotifys from "../circleOfNotifys/circleOfNotifys";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
@@ -78,7 +75,6 @@ export const Hello = ({ name, srcAvatar }) => {
   return (
     <div className={helloContainer}>
       <h3>Hola {name}</h3>
-      <p>{}</p>
       <div>
         <div className={avatarCSS}>{avatarPrint}</div>
       </div>

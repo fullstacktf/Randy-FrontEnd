@@ -2,9 +2,8 @@ import React from "react";
 import { LogoApp } from "../logoApp/logoApp";
 import { Hello } from "../hello/hello";
 import { css } from "emotion";
-import { AppState } from "../../reducers";
-import { connect } from "react-redux";
-
+import { connect, ConnectedProps } from "react-redux";
+import { RootState } from "../../store/index"
 const header = css(`
   max-height: 100px;
   padding-right: 50px;
@@ -15,14 +14,25 @@ const header = css(`
   justify-content: space-between;
   align-items: center;
 `);
-const mapStateToProps = (state: AppState) => {
-  return { name: state.user };
-};
-interface HeaderProps {
-  name: string;
+
+const mapStateToProps = (state: RootState) => ({
+  name: state.userReducer.user.name
+})
+
+const mapDispatchToActions = {
+  getName: () => ({type:'GET_USER'})
 }
 
-const HeaderTop = (props: HeaderProps) => {
+const connector = connect(
+  mapStateToProps,
+  mapDispatchToActions
+)
+
+type Props4Redux = ConnectedProps<typeof connector>
+
+type HeaderTopProps = Props4Redux
+
+const HeaderTop = (props: HeaderTopProps) => {
   return (
     <div className={header}>
       <LogoApp></LogoApp>
@@ -30,4 +40,4 @@ const HeaderTop = (props: HeaderProps) => {
     </div>
   );
 };
-export default connect(mapStateToProps)(HeaderTop);
+export default connector(HeaderTop)
