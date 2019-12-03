@@ -11,4 +11,9 @@ interface EmptyNotify extends Action {
   type: string;
   payload: ReturnType<() => number>;
 }
-export type ActionTypes = IncrementNotify | EmptyNotify;
+
+export interface UserLogin {
+  type: string;
+  payload: ReturnType<() => string>;
+}
+export type ActionTypes = IncrementNotify | EmptyNotify | UserLogin;

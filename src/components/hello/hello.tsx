@@ -2,8 +2,8 @@ import React from "react";
 import { css } from "emotion";
 import styled from "@emotion/styled";
 import { connect } from "react-redux";
-import rootReducer, { AppState } from "../../reducers";
-import { CircleOfNotifys } from "../circleOfNotifys/circleOfNotifys";
+import { AppState } from "../../reducers";
+import CircleOfNotifys from "../circleOfNotifys/circleOfNotifys";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
@@ -85,19 +85,3 @@ export const Hello = ({ name, srcAvatar }) => {
     </div>
   );
 };
-
-{
-  /* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify>  */
-}
-{
-  /* <CircleNotifys>1</CircleNotifys>  */
-}
-const mapStateToProps = (state: AppState) => {
-  return { counter: state.notifys.value };
-};
-
-const mapDispatchToProps = dispatch => ({
-  //newNotify: (value: number) => dispatch(newNotify(value))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);

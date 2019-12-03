@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import rootReducer, { AppState } from "../../reducers";
 import styled from "@emotion/styled";
+import { AppState } from "../../reducers";
 
 const CircleNotifys = styled.div`
   background: red;
@@ -31,38 +31,6 @@ const ButtonNotify = styled.button`
     opacity: 0.8;
   }
 `;
-
-export interface NotifysProps {
-  counter: number;
-  newNotify?: (value: number) => {};
-  empyNotifys?: (value: number) => {};
-}
-
-export class CircleOfNotifys extends React.Component<NotifysProps, {}> {
-  constructor(props) {
-    super(props);
-
-    this.incrementCounter = this.incrementCounter.bind(this);
-    this.resetCounter = this.resetCounter.bind(this);
-  }
-
-  incrementCounter() {
-    if (this.props.newNotify) this.props.newNotify(1);
-  }
-  resetCounter() {
-    if (this.props.empyNotifys) this.props.empyNotifys(0);
-  }
-
-  render() {
-    return (
-      <div>
-        <ButtonNotify onClick={this.incrementCounter}>+1 notificación test</ButtonNotify>
-        <CircleNotifys>{this.props.counter}</CircleNotifys>
-      </div>
-    );
-  }
-}
-
 const mapStateToProps = (state: AppState) => {
   return { counter: state.notifys.value };
 };
@@ -70,5 +38,33 @@ const mapStateToProps = (state: AppState) => {
 const mapDispatchToProps = dispatch => ({
   newNotify: (value: number) => dispatch()
 });
+
+interface NotifyProps {
+  counter: ReturnType<() => number>;
+}
+
+class CircleOfNotifys extends React.Component<NotifyProps, {}> {
+  constructor(props) {
+    super(props);
+
+    /*    this.incrementCounter = this.incrementCounter.bind(this);
+    this.resetCounter = this.resetCounter.bind(this); */
+  }
+
+  /*   incrementCounter() {
+    if (this.props.newNotify) this.props.newNotify(1);
+  }
+  resetCounter() {
+    if (this.props.empyNotifys) this.props.empyNotifys(0);
+  } */
+
+  render() {
+    return (
+      <div>
+        <CircleNotifys>{this.props.counter}</CircleNotifys>
+      </div>
+    );
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(CircleOfNotifys);

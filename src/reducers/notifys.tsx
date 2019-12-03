@@ -1,9 +1,9 @@
 import { NotifyState } from "./index";
-import { ActionTypes } from "../actions/action-types";
+import { IncrementNotify } from "../actions/action-types";
 
 const initialState: NotifyState = { value: 0 };
 
-const notifyCounter = (state = initialState, action: ActionTypes) => {
+const notifyCounter = (state = initialState, action: IncrementNotify) => {
   switch (action.type) {
     case "NEW_NOTIFY":
       state.value = action.payload;
