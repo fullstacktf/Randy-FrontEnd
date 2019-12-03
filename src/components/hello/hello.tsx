@@ -1,5 +1,8 @@
 import React from "react";
 import { css } from "emotion";
+import styled from "@emotion/styled";
+import { AppState } from "../../reducers";
+import { NewNotify } from "../../actions";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
@@ -25,6 +28,20 @@ const imageCSS = css`
   clip-path: circle(2em at center);
 `;
 
+const ButtonNotify = styled.button`
+font-size: 1em;
+height: 40px;
+margin-right: 50px;
+background: #47ab43;
+color: white;
+border-radius: 10px;
+border: 1px solid #47ab43;
+cursor: pointer;
+&:hover {
+  opacity: 0.8;
+}
+`;
+
 export const Hello = ({ name, srcAvatar }) => {
   const photo: boolean = false;
 
@@ -46,8 +63,23 @@ export const Hello = ({ name, srcAvatar }) => {
 
   return (
     <div className={helloContainer}>
+      <ButtonNotify>+1 notificación test</ButtonNotify>
       <h3>Hola {name}</h3>
       <div className={avatarCSS}>{avatarPrint}</div>
     </div>
   );
 };
+
+
+function newNotify() {
+  store.dispatch(NewNotify(1))
+}
+
+
+const mapStateToProps = (state: AppState) => {
+  return { counter: state.notifys.value };
+}
+
+const mapDispatchToProps = (dispatch) => ({
+
+})
