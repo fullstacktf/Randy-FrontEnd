@@ -1,10 +1,10 @@
 import { User } from "../types"
 
-export const GET_USER_NAME = 'GET_USER_NAME'
+export const SET_USER_NAME = 'SET_USER_NAME'
 export const DELETE_USER = 'DELETE_USER'
 
 interface GetUserAction{
-  type: typeof GET_USER_NAME,
+  type: typeof SET_USER_NAME,
   payload: User
 }
 

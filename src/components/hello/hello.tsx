@@ -76,6 +76,8 @@ export const Hello = ({ name, srcAvatar }) => {
     <div className={helloContainer}>
       <h3>Hola {name}</h3>
       <div>
+        <ButtonNotify></ButtonNotify>
+        <CircleNotifys></CircleNotifys>
         <div className={avatarCSS}>{avatarPrint}</div>
       </div>
     </div>
