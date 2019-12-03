@@ -1,36 +1,35 @@
 import * as React from "react";
-import { connect } from 'react-redux'
-import { AppState } from '../../reducers'
+import { connect } from "react-redux";
+import rootReducer, { AppState } from "../../reducers";
 import styled from "@emotion/styled";
-import { newNotify, empyNotifys } from '../../actions'
 
 const CircleNotifys = styled.div`
-background: red;
-color: white;
-border-radius:50%;
-border: 5px solid white;
-width: 25px;
-height: 25px;
-display: flex;
-justify-content:center;
-align-items:center;
-font-weight:bold;
-z-index:5;
-transform: translate(55px, 20px);
+  background: red;
+  color: white;
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 5;
+  transform: translate(55px, 20px);
 `;
 
 const ButtonNotify = styled.button`
-font-size: 1em;
-height: 40px;
-margin-right: 50px;
-background: #47ab43;
-color: white;
-border-radius: 10px;
-border: 1px solid #47ab43;
-cursor: pointer;
-&:hover {
-  opacity: 0.8;
-}
+  font-size: 1em;
+  height: 40px;
+  margin-right: 50px;
+  background: #47ab43;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #47ab43;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export interface NotifysProps {
@@ -39,7 +38,7 @@ export interface NotifysProps {
   empyNotifys?: (value: number) => {};
 }
 
-class CircleOfNotifys extends React.Component<NotifysProps, {}>{
+export class CircleOfNotifys extends React.Component<NotifysProps, {}> {
   constructor(props) {
     super(props);
 
@@ -54,21 +53,22 @@ class CircleOfNotifys extends React.Component<NotifysProps, {}>{
     if (this.props.empyNotifys) this.props.empyNotifys(0);
   }
 
-
   render() {
     return (
-      <ButtonNotify onClick={this.incrementCounter}>+1 notificación test</ButtonNotify>
-      <CircleNotifys>{this.props.counter}</CircleNotifys>
-    )
+      <div>
+        <ButtonNotify onClick={this.incrementCounter}>+1 notificación test</ButtonNotify>
+        <CircleNotifys>{this.props.counter}</CircleNotifys>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = (state: AppState) => {
   return { counter: state.notifys.value };
-}
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  newNotify: (value: number) => dispatch(newNotify(value))
-})
+const mapDispatchToProps = dispatch => ({
+  newNotify: (value: number) => dispatch()
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CircleOfNotifys);

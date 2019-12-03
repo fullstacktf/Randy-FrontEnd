@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import notifyCounter from './notifys'
+import { combineReducers } from "redux";
+import notifyCounter from "./notifys";
 
 export interface NotifyState {
   value: number;
@@ -11,4 +11,4 @@ export interface AppState {
 
 export default combineReducers({
   notifyCounter
-})
+});

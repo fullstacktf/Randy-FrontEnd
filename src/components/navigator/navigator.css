@@ -14,8 +14,7 @@
   margin: 20px;
 }
 
-.isActive {
-  fill: red;
+.active {
 }
 
 .selected {

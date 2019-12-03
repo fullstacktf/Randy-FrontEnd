@@ -1,12 +1,12 @@
-import ActionTypes from '../actions';
-import { NotifyState } from './index'
+import { NotifyState } from "./index";
+import { ActionTypes } from "../actions/action-types";
 
 const initialState: NotifyState = { value: 0 };
 
 const notifyCounter = (state = initialState, action: ActionTypes) => {
   switch (action.type) {
-    case 'NEW_NOTIFY':
-      return { ...state, value: state.value + 1 }
+    case "NEW_NOTIFY":
+      state.value = action.payload;
     default:
       return state;
   }

@@ -1,10 +1,9 @@
 import * as React from "react";
-import * as Redux from 'redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import "./css/App.css";
 import styled from "@emotion/styled";
-import rootReducer, { AppState } from './reducers'
+import store from "./store/index";
 import Navigator from "./components/navigator/navigator";
 import { HeaderTop } from "./components/header/header";
 import { LoginForm } from "./components/login/login";
@@ -14,8 +13,6 @@ import { Calendar } from "./pages/Calendar/Calendar";
 import { Tasklist } from "./pages/Tasklist/Tasklist";
 import { Bill } from "./pages/Bill/Bill";
 import { Settings } from "./pages/Settings/Settings";
-
-const store: Redux.Store<AppState> = Redux.createStore(rootReducer);
 
 const Container = styled.div`
   background: white;
@@ -68,4 +65,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

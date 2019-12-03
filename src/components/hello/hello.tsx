@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "emotion";
 import styled from "@emotion/styled";
-import { connect } from 'react-redux'
-import { AppState } from "../../reducers";
-import { NewNotify } from "../../actions";
+import { connect } from "react-redux";
+import rootReducer, { AppState } from "../../reducers";
+import { CircleOfNotifys } from "../circleOfNotifys/circleOfNotifys";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
@@ -29,41 +29,36 @@ const imageCSS = css`
 `;
 
 const ButtonNotify = styled.button`
-font-size: 1em;
-height: 40px;
-margin-right: 50px;
-background: #47ab43;
-color: white;
-border-radius: 10px;
-border: 1px solid #47ab43;
-cursor: pointer;
-&:hover {
-  opacity: 0.8;
-}
+  font-size: 1em;
+  height: 40px;
+  margin-right: 50px;
+  background: #47ab43;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #47ab43;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const CircleNotifys = styled.div`
-background: red;
-color: white;
-border-radius:50%;
-border: 5px solid white;
-width: 25px;
-height: 25px;
-display: flex;
-justify-content:center;
-align-items:center;
-font-weight:bold;
-z-index:5;
-transform: translate(55px, 20px);
-`
-
-function newNotify() {
-  //store.dispatch(NewNotify(1))
-}
+  background: red;
+  color: white;
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 5;
+  transform: translate(55px, 20px);
+`;
 
 export const Hello = ({ name, srcAvatar }) => {
   const photo: boolean = false;
-
   let avatarPrint = (
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="30" cy="30" r="30" fill="#EAEAEA" />
@@ -80,28 +75,29 @@ export const Hello = ({ name, srcAvatar }) => {
     avatarPrint = <img className={imageCSS} src={srcAvatar} alt="Avatar" />;
   }
 
-
   return (
     <div className={helloContainer}>
-      {/* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify> */}
       <h3>Hola {name}</h3>
+      <p>{}</p>
       <div>
-        {/* <CircleNotifys>1</CircleNotifys> */}
         <div className={avatarCSS}>{avatarPrint}</div>
       </div>
     </div>
   );
 };
 
-
-
-
+{
+  /* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify>  */
+}
+{
+  /* <CircleNotifys>1</CircleNotifys>  */
+}
 const mapStateToProps = (state: AppState) => {
   return { counter: state.notifys.value };
-}
+};
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   //newNotify: (value: number) => dispatch(newNotify(value))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Hello);
