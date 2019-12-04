@@ -2,12 +2,12 @@ import React, { useReducer } from "react";
 
 const initialState = { counter: 0 };
 
-const notifysReducer = (state, action) => {
+export const notifysReducer = (state, action) => {
   switch (action.type) {
     case "NEW_NOTIFY":
       return { counter: state.counter + 1 };
     case "RESET_NOTIFYS":
-      return { counter: (state.counter = 0) };
+      return { counter: state.counter = 0 };
     default:
       return state;
   }

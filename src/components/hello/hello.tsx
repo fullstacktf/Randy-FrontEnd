@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "emotion";
-import styled from "@emotion/styled";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
@@ -25,34 +24,34 @@ const imageCSS = css`
   clip-path: circle(2em at center);
 `;
 
-const ButtonNotify = styled.button`
-font-size: 1em;
-height: 40px;
-margin-right: 50px;
-background: #47ab43;
-color: white;
-border-radius: 10px;
-border: 1px solid #47ab43;
-cursor: pointer;
-&:hover {
-  opacity: 0.8;
-}
-`;
+// const ButtonNotify = styled.button`
+// font-size: 1em;
+// height: 40px;
+// margin-right: 50px;
+// background: #47ab43;
+// color: white;
+// border-radius: 10px;
+// border: 1px solid #47ab43;
+// cursor: pointer;
+// &:hover {
+//   opacity: 0.8;
+// }
+// `;
 
-const CircleNotifys = styled.div`
-background: red;
-color: white;
-border-radius:50%;
-border: 5px solid white;
-width: 25px;
-height: 25px;
-display: flex;
-justify-content:center;
-align-items:center;
-font-weight:bold;
-z-index:5;
-transform: translate(55px, 20px);
-`
+// const CircleNotifys = styled.div`
+// background: red;
+// color: white;
+// border-radius:50%;
+// border: 5px solid white;
+// width: 25px;
+// height: 25px;
+// display: flex;
+// justify-content:center;
+// align-items:center;
+// font-weight:bold;
+// z-index:5;
+// transform: translate(55px, 20px);
+// `
 
 export const Hello = ({ name, srcAvatar }) => {
   const photo: boolean = false;
@@ -83,7 +82,3 @@ export const Hello = ({ name, srcAvatar }) => {
     </div>
   );
 };
-
-
-{/* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify> */ }
-{/* <CircleNotifys>1</CircleNotifys> */ }

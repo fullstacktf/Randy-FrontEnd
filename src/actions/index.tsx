@@ -1,5 +1,5 @@
-export const newNotify = (alpha: number) => ({ type: 'NEW_NOTIFY', alpha });
-export const empyNotifys = (alpha: number) => ({ type: 'EMPY_NOTIFYS', alpha });
+export const newNotify = (number: number) => ({ type: 'NEW_NOTIFY', number });
+export const empyNotifys = (number: number) => ({ type: 'EMPY_NOTIFYS', number });
 
 type ActionType =
   | NewNotify

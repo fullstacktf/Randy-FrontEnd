@@ -1,8 +1,6 @@
 import React, { FC, useReducer } from "react";
-import { connect } from "react-redux";
-import { AppState } from "../../reducers";
 import styled from "@emotion/styled";
-import { newNotify, empyNotifys } from "../../actions";
+import { ButtonNewNotify } from "./buttonNewNotify";
 
 const CircleNotifys = styled.div`
   background: red;
@@ -19,19 +17,19 @@ const CircleNotifys = styled.div`
   transform: translate(55px, 20px);
 `;
 
-const ButtonNotify = styled.button`
-  font-size: 1em;
-  height: 40px;
-  margin-right: 50px;
-  background: #47ab43;
-  color: white;
-  border-radius: 10px;
-  border: 1px solid #47ab43;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
-`;
+// const ButtonNotify = styled.button`
+//   font-size: 1em;
+//   height: 40px;
+//   margin-right: 50px;
+//   background: #47ab43;
+//   color: white;
+//   border-radius: 10px;
+//   border: 1px solid #47ab43;
+//   cursor: pointer;
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// `;
 
 export interface NotifysProps {
   counter?: number;
@@ -53,19 +51,20 @@ const CircleOfNotifys: FC<NotifysProps> = props => {
     }
   };
 
-  const [state, dispatch] = useReducer(notifysReducer, initialState);
+  const [state] = useReducer(notifysReducer, initialState);
 
-  const incrementCounter = () => dispatch({ type: "NEW_NOTIFY" });
-
-  const resetCounter = () => dispatch({ type: "RESET_NOTIFYS" });
+  // const incrementCounter = () => dispatch({ type: "NEW_NOTIFY" });
+  // const resetCounter = () => dispatch({ type: "RESET_NOTIFYS" });
+  // <ButtonNotify onClick={incrementCounter}>+1 notificación</ButtonNotify>
+  // <ButtonNotify onClick={resetCounter}>Todo leido</ButtonNotify>
 
   return (
     <div>
       <CircleNotifys>{state.counter}</CircleNotifys>
-      <ButtonNotify onClick={incrementCounter}>+1 notificación</ButtonNotify>
-      <ButtonNotify onClick={resetCounter}>Todo leido</ButtonNotify>
+      {/* <ButtonNewNotify></ButtonNewNotify> */}
     </div>
   );
 };
 
 export default CircleOfNotifys;
+

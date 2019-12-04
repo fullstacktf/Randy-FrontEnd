@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 import rootReducer, { AppState } from './reducers'
 import Navigator from "./components/navigator/navigator";
 import { HeaderTop } from "./components/header/header";
-import { LoginForm } from "./components/login/login";
 import { Home } from "./pages/Home/Home";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Calendar } from "./pages/Calendar/Calendar";
