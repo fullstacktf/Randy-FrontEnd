@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC, useReducer } from "react";
 import { connect } from 'react-redux'
 import { AppState } from '../../reducers'
 import styled from "@emotion/styled";
@@ -33,42 +33,45 @@ cursor: pointer;
 }
 `;
 
+
+
 export interface NotifysProps {
-  counter: number;
+  counter?: number;
   newNotify?: (value: number) => {};
   empyNotifys?: (value: number) => {};
 }
 
-class CircleOfNotifys extends React.Component<NotifysProps, {}>{
-  constructor(props) {
-    super(props);
+const CircleOfNotifys: FC<NotifysProps> = props => {
 
-    this.incrementCounter = this.incrementCounter.bind(this);
-    this.resetCounter = this.resetCounter.bind(this);
+  const initialState = { counter: 0 }
+
+  const notifysReducer = (state, action) => {
+    switch (action.type) {
+      case 'NEW_NOTIFY':
+        return { count: state.counter + 1 }
+      case 'RESET_NOTIFYS':
+        return { count: state.counter = 0 }
+      default:
+        return state.counter;
+    }
   }
 
-  incrementCounter() {
-    if (this.props.newNotify) this.props.newNotify(1);
-  }
-  resetCounter() {
-    if (this.props.empyNotifys) this.props.empyNotifys(0);
-  }
+
+  const [state, dispatch] = useReducer(notifysReducer, initialState);
+
+  const incrementCounter = () => dispatch({ type: 'NEW_NOTIFY' })
+
+  const resetCounter = () => dispatch({ type: 'RESET_NOTIFYS' })
 
 
-  render() {
-    return (
-      <ButtonNotify onClick={this.incrementCounter}>+1 notificación test</ButtonNotify>
-      <CircleNotifys>{this.props.counter}</CircleNotifys>
-    )
-  }
+  return (
+    <div>
+      <CircleNotifys>{state.counter}</CircleNotifys>
+      <ButtonNotify onClick={incrementCounter}>+1 notificación</ButtonNotify>
+      <ButtonNotify onClick={resetCounter}>Todo leido</ButtonNotify>
+    </div>
+  )
+
 }
 
-const mapStateToProps = (state: AppState) => {
-  return { counter: state.notifys.value };
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  newNotify: (value: number) => dispatch(newNotify(value))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CircleOfNotifys);
+export default CircleOfNotifys;

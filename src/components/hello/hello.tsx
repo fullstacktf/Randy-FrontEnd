@@ -1,9 +1,6 @@
 import React from "react";
 import { css } from "emotion";
 import styled from "@emotion/styled";
-import { connect } from 'react-redux'
-import { AppState } from "../../reducers";
-import { NewNotify } from "../../actions";
 
 const helloContainer = css(`
   font-family: 'Montserrat', sans-serif;
@@ -57,10 +54,6 @@ z-index:5;
 transform: translate(55px, 20px);
 `
 
-function newNotify() {
-  //store.dispatch(NewNotify(1))
-}
-
 export const Hello = ({ name, srcAvatar }) => {
   const photo: boolean = false;
 
@@ -83,10 +76,8 @@ export const Hello = ({ name, srcAvatar }) => {
 
   return (
     <div className={helloContainer}>
-      {/* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify> */}
       <h3>Hola {name}</h3>
       <div>
-        {/* <CircleNotifys>1</CircleNotifys> */}
         <div className={avatarCSS}>{avatarPrint}</div>
       </div>
     </div>
@@ -94,14 +85,5 @@ export const Hello = ({ name, srcAvatar }) => {
 };
 
 
-
-
-const mapStateToProps = (state: AppState) => {
-  return { counter: state.notifys.value };
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  //newNotify: (value: number) => dispatch(newNotify(value))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+{/* <ButtonNotify onClick={newNotify}>+1 notificación test</ButtonNotify> */ }
+{/* <CircleNotifys>1</CircleNotifys> */ }
