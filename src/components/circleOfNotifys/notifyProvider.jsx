@@ -17,5 +17,9 @@ export const NotifyContext = React.createContext();
 
 export const NotifyProvider = ({ childer }) => {
   const [state, dispatch] = useReducer(notifysReducer, initialState);
-  return <NotifyContext.Provider value={[state, dispatch]}>{childer}</NotifyContext.Provider>;
+  return (
+    <NotifyContext.Provider value={[state, dispatch]}>
+      {childer}
+    </NotifyContext.Provider>
+  );
 };
