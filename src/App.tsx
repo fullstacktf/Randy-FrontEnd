@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as Redux from 'redux';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { Provider } from "react-redux";
 import "./css/App.css";
 import styled from "@emotion/styled";
@@ -23,19 +23,18 @@ const Container = styled.div`
   justify-content: flex-start;
 `;
 
-
 const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Container>
+        <Route exact path="/" component={Home} />
+        < Container >
           <div className="containerNagigator">
             <Navigator />
           </div>
           <div className="page">
             <HeaderTop />
             <div className="content">
-              <Route exact path="/" component={Home} />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/calendar" component={Calendar} />
               <Route path="/tasklist" component={Tasklist} />
@@ -45,7 +44,7 @@ const App: React.FC = () => {
           </div>
         </Container>
       </Router>
-    </Provider>
+    </Provider >
   );
 };
 
