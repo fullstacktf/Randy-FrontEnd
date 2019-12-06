@@ -9,9 +9,10 @@ const props = {
 
 describe("Hello", () => {
   describe("Render", () => {
-    test("Should render a h1 text with the name Carlos", () => {
+    xtest("Should render a h3 text with the name Carlos", () => {
       const wrapper = shallow(<Hello {...props}></Hello>);
-      expect(wrapper.find("h3").text()).toBe("Hola Carlos");
+      console.log('================================>', wrapper);
+      expect(wrapper).toBe("Hola Carlos");
     });
   });
 });

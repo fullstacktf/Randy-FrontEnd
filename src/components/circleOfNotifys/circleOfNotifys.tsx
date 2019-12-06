@@ -1,4 +1,4 @@
-import React, { FC, useReducer, useContext } from "react";
+import React, { FC, useContext } from "react";
 import styled from "@emotion/styled";
 import { NotifyContext } from "./notifyProvider";
 

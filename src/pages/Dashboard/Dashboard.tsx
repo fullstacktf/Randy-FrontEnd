@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import CircleOfNotifys from "../../components/circleOfNotifys/circleOfNotifys";
 import { ButtonNewNotify } from "../../components/circleOfNotifys/buttonNewNotify";
 
 

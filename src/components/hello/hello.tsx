@@ -66,7 +66,7 @@ export const Hello: FC<HelloProps> = ({ name, srcAvatar }) => {
     <>
       <HelloContainer>
         <Text>Hola {name}</Text>
-        {srcAvatar != "" && <div>
+        {srcAvatar !== "" && <div>
           <LandscapeImage>
             <Image src={srcAvatar} alt="Avatar" onClick={handleReadNotifys} />
           </LandscapeImage>
