@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from '@emotion/styled';
-import { NotifyContext } from "./notifyProvider";
+import { NotifyContext, NEW_NOTIFY } from "./notifyProvider";
 
 const ButtonNotify = styled.button`
   font-size: 1em;
@@ -18,15 +18,14 @@ const ButtonNotify = styled.button`
 
 
 export const ButtonNewNotify = props => {
-  const [dispatch] = useContext(NotifyContext);
+  const [state, dispatch] = useContext(NotifyContext);
 
-  const handleNewNotify = () => dispatch({ type: "NEW_NOTIFY" })
+  const handleNewNotify = () => dispatch({ type: NEW_NOTIFY })
 
   return (
     <>
-      <button onClick={handleNewNotify}> Nueva notificación </button>
+      <ButtonNotify onClick={handleNewNotify}> Nueva notificación </ButtonNotify>
     </>
   );
 };
 
-//<ButtonNotify onClick={handleNewNotify}> Nueva notificación </ButtonNotify>

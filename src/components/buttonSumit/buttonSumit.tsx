@@ -19,7 +19,8 @@ const Button = styled.button`
 
 interface ButtonSummitProps {
   content: string,
-  functionOnClick: () => void,
+  className?: string,
+  functionOnClick?: () => void,
   path: string
 }
 

@@ -36,7 +36,7 @@ const DivIcon = styled.div<any>`
   rect {
     fill: ${props => props.active ? '#47AB43' : '#FFF'};
   }
-  &:hover:not(.isActive) {
+  &:hover:not(.active) {
     animation: ${InHoverAnimation} 0.2s ease-in-out both alternate;
     svg > path,
     rect {

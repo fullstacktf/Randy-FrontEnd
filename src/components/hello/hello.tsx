@@ -1,62 +1,52 @@
-import React from "react";
-import { css } from "emotion";
+import React, { FC, useContext } from "react";
+import styled from '@emotion/styled';
+import CircleOfNotifys from "../circleOfNotifys/circleOfNotifys";
+import { NotifyContext, RESET_NOTIFYS } from "../circleOfNotifys/notifyProvider";
 
-const helloContainer = css(`
+const HelloContainer = styled.div`
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-`);
-
-const avatarCSS = css`
-  max-width: auto;
-  max-height: 100px;
-  margin-left: 20px;
-  &:hover {
-    max-width: 50;
-  }
+  align-items: center;
 `;
 
-const imageCSS = css`
-  max-width: auto;
-  max-height: 100px;
-  margin-left: 20px;
-  clip-path: circle(2em at center);
+const NotifyContainer = styled.div`
+z-index:5;
+transform:translate(-30px,-40px);
+`
+
+const Text = styled.h3`
+margin-right: 15px;
+font-size: 1.3rem;
+`
+const AvatarCSS = styled.div`
 `;
 
-// const ButtonNotify = styled.button`
-// font-size: 1em;
-// height: 40px;
-// margin-right: 50px;
-// background: #47ab43;
-// color: white;
-// border-radius: 10px;
-// border: 1px solid #47ab43;
-// cursor: pointer;
-// &:hover {
-//   opacity: 0.8;
-// }
-// `;
+const LandscapeImage = styled.div`
+display: inline-block;
+position: relative;
+min-width: 25px;
+min-height: 25px;
+max-width: 80px;
+max-height: 80px;
+overflow: hidden;
+border-radius: 50%;
+`
 
-// const CircleNotifys = styled.div`
-// background: red;
-// color: white;
-// border-radius:50%;
-// border: 5px solid white;
-// width: 25px;
-// height: 25px;
-// display: flex;
-// justify-content:center;
-// align-items:center;
-// font-weight:bold;
-// z-index:5;
-// transform: translate(55px, 20px);
-// `
+const Image = styled.img`
+width: auto;
+height: 80px;
+margin-left: -20px;
+  `;
 
-export const Hello = ({ name, srcAvatar }) => {
-  const photo: boolean = false;
+export interface HelloProps {
+  name: string,
+  srcAvatar: string
+}
 
-  let avatarPrint = (
+export const Hello: FC<HelloProps> = ({ name, srcAvatar }) => {
+
+  const avatarPrint = (
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="30" cy="30" r="30" fill="#EAEAEA" />
       <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
@@ -68,17 +58,25 @@ export const Hello = ({ name, srcAvatar }) => {
     </svg>
   );
 
-  if (photo) {
-    avatarPrint = <img className={imageCSS} src={srcAvatar} alt="Avatar" />;
-  }
+  const [state, dispatch] = useContext(NotifyContext);
 
+  const handleReadNotifys = () => dispatch({ type: RESET_NOTIFYS })
 
   return (
-    <div className={helloContainer}>
-      <h3>Hola {name}</h3>
-      <div>
-        <div className={avatarCSS}>{avatarPrint}</div>
-      </div>
-    </div>
+    <>
+      <HelloContainer>
+        <Text>Hola {name}</Text>
+        {srcAvatar != "" && <div>
+          <LandscapeImage>
+            <Image src={srcAvatar} alt="Avatar" onClick={handleReadNotifys} />
+          </LandscapeImage>
+        </div>
+        }
+        {srcAvatar === "" && <AvatarCSS>{avatarPrint}</AvatarCSS>}
+        <NotifyContainer>
+          <CircleOfNotifys />
+        </NotifyContainer>
+      </HelloContainer>
+    </>
   );
 };
