@@ -37,7 +37,7 @@ align-items:center;
 
 const App: React.FC = () => {
   //VOLVER VALOR A FALSE PARA TENER MODO LOGIN
-  const [stateLogin, setLogin] = useState({ isLogged: false })
+  const [stateLogin, setLogin] = useState({ isLogged: true })
 
   const handleLogin = () => {
     setLogin({ isLogged: true })

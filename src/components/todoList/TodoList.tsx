@@ -21,7 +21,7 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [] }) => {
     const newTasks = tasks.map(task => {
       if (task.uuid === taskToUpdate.uuid) {
         return { ...task, done: !task.done };
-      }
+      } 
       return task;
     });
     setTasks(newTasks);
