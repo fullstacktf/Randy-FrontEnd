@@ -48,30 +48,28 @@ const App: React.FC = () => {
       <Router>
         {!stateLogin.isLogged && (
           <ContainterHome>
-            <Route path="/" component={Home} />
+            <Route path="/" component={Home}/>
             <ButtonSummit path="/dashboard" content="Loguearse" functionOnClick={handleLogin}></ButtonSummit>
           </ContainterHome>
         )}
-        {stateLogin.isLogged && < Container >
+        {stateLogin.isLogged && < Container>
           <div className="containerNavigator">
-            <Navigator />
+            <Navigator/>
           </div>
           <div className="page">
-            <NotifyProvider>
-              <HeaderTop />
-              <div className="content">
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/calendar" component={Calendar} />
-                <Route path="/tasklist" component={Tasklist} />
-                <Route path="/bill" component={Bill} />
-                <Route path="/settings" component={Settings} />
-              </div>
-            </NotifyProvider>
+            <HeaderTop/>
+            <div className="content">
+              <Route path="/dashboard" component={Dashboard}/>
+              <Route path="/calendar" component={Calendar}/>
+              <Route path="/tasklist" component={Tasklist}/>
+              <Route path="/bill" component={Bill}/>
+              <Route path="/settings" component={Settings}/>
+            </div>
           </div>
         </Container>
         }
       </Router>
-    </Provider >
+    </Provider>
   );
 };
 
