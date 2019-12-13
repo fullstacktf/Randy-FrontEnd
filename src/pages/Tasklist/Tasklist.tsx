@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { TodoList } from "../../components/todoList/TodoList";
 
@@ -10,6 +10,11 @@ let tareasPrevias = [
 ];
 
 export const Tasklist: FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [taskList, setTaskList] = useState();
+
+  useEffect(() => {}, []);
+
   return (
     <Container>
       <h1>

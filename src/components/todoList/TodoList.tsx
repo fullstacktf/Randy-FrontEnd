@@ -1,4 +1,4 @@
-import React, { FC, useState, useContext } from "react";
+import React, { FC, useState, useContext, useEffect } from "react";
 import styled from "@emotion/styled";
 import { TaskItem } from "./TaskItem";
 import { NotifyContext, NEW_NOTIFY } from "../circleOfNotifys/notifyProvider";
@@ -11,12 +11,32 @@ export interface Task {
 
 interface TodoListProps {
   initialTasks: Task[];
+  url: string;
 }
 
-export const TodoList: FC<TodoListProps> = ({ initialTasks = [] }) => {
+function toTaskModelList(taskRespons) {
+  return taskRespons.data.map(rawTask => ({
+    uuid: rawTask._id,
+    label: rawTask.contain,
+    done: rawTask.checked
+  }));
+}
+
+export const TodoList: FC<TodoListProps> = ({ initialTasks = [], url }) => {
   const [state, dispatch] = useContext(NotifyContext);
 
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
+
+  const [taskList, setTaskList] = useState();
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(taskRespons => {
+        setTaskList(toTaskModelList(taskRespons));
+      })
+      .catch(err => console.log("HE PETAO", err));
+  }, [url]);
 
   const handleOnCheckInput = (taskToUpdate: Task) => {
     const newTasks = tasks.map(task => {

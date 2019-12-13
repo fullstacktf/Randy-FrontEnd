@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
-import checkedsvg from "./nochecked.svg";
 import { Task } from "./TodoList";
 
 interface TaskProps {
