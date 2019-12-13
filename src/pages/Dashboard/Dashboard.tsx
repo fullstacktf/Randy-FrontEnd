@@ -1,6 +1,12 @@
-import React, { FC, useState } from "react";
-import styled from "@emotion/styled";
+import React, { FC } from "react";
+import { ButtonNewNotify } from "../../components/circleOfNotifys/buttonNewNotify";
+
 
 export const Dashboard: FC = () => {
-  return <h1>Hola, soy el Dashboard ✨ </h1>;
+  return (
+    <div>
+      <h1>Hola, soy el Dashboard <span role="img" aria-label="Sparkles">✨</span> </h1>
+      <ButtonNewNotify />
+    </div>
+  );
 };
