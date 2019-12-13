@@ -2,7 +2,7 @@
   "name": "randy_fron-end",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://raivencorps.me/",
+  "homepage": "http://randy.tools/",
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
@@ -16,7 +16,7 @@
     "react-redux": "^7.1.3",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^3.3.0",
     "redux": "^4.0.4",
     "typescript": "3.7.2"
   },

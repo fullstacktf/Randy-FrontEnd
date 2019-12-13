@@ -10,14 +10,14 @@
 
 ## Equipo: :man_technologist::man_technologist:
 
-[@Carlos M.](https://github.com/AnnwynDev)
+~~[@Carlos M.](https://github.com/AnnwynDev)~~
 
 [@RubénZagon](https://github.com/RubenZagon) :unicorn:
 
 ## Página principal 
-:construction_worker::construction:En construcción...:construction::construction_worker_woman:
+:construction_worker::construction:En construcción...:construction:
 
-[Randy-designer](https://raivencorps.me)
+[Randy](https://randy.tools)
 
 ## Diseño :hear_no_evil:
 

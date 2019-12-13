@@ -31,6 +31,7 @@ const OutHoverAnimation = keyframes`
 const DivIcon = styled.div<any>`
   padding: 10px;
   animation: ${OutHoverAnimation} 0.2s ease-in-out both alternate;
+  outline:0;
   cursor: pointer;
   svg > path,
   rect {

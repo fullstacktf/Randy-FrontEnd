@@ -10,6 +10,7 @@ const ButtonNotify = styled.button`
   color: white;
   border-radius: 10px;
   border: 1px solid #47ab43;
+  outline:none;
   cursor: pointer;
   &:hover {
     opacity: 0.8;
