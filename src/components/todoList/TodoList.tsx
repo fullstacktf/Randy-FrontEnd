@@ -1,6 +1,7 @@
-import React, { FC, useState, useContext } from 'react';
+import React, { FC, useState, useContext } from "react";
+import styled from "@emotion/styled";
 import { TaskItem } from "./TaskItem";
-import { NotifyContext, NEW_NOTIFY } from '../circleOfNotifys/notifyProvider';
+import { NotifyContext, NEW_NOTIFY } from "../circleOfNotifys/notifyProvider";
 
 export interface Task {
   uuid: string;
@@ -21,7 +22,7 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [] }) => {
     const newTasks = tasks.map(task => {
       if (task.uuid === taskToUpdate.uuid) {
         return { ...task, done: !task.done };
-      } 
+      }
       return task;
     });
     setTasks(newTasks);
@@ -29,17 +30,40 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [] }) => {
 
   const addNewTask = () => {
     const newTasks = [...tasks];
-    newTasks.push({ uuid: '' + Math.random(), label: `Todo-${Math.random()}`, done: false })
+    newTasks.push({ uuid: "" + Math.random(), label: `Todo-${Math.random()}`, done: false });
     setTasks(newTasks);
     dispatch({ type: NEW_NOTIFY });
-
   };
 
-  return <div>
-    <h1>Todo list</h1>
-    <button onClick={addNewTask}>add</button>
-    {tasks.map(task => <TaskItem key={task.uuid}
-      onCheckInput={handleOnCheckInput}
-      task={task} />)}
-  </div>
+  return (
+    <Container>
+      <Button onClick={addNewTask}>+ Agregar nueva tarea</Button>
+      {tasks.map(task => (
+        <TaskItem key={task.uuid} onCheckInput={handleOnCheckInput} task={task} />
+      ))}
+    </Container>
+  );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  height: 40px;
+  margin-right: 50px;
+  background: #47ab43;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #47ab43;
+  outline: 0;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
