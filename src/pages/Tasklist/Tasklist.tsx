@@ -23,7 +23,7 @@ export const Tasklist: FC = () => {
           📌
         </span>{" "}
       </h1>
-      <TodoList initialTasks={tareasPrevias} />
+      <TodoList initialTasks={tareasPrevias} url="http://randy.tools/api/tasksList" />
     </Container>
   );
 };
