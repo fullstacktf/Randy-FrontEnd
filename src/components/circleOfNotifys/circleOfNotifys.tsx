@@ -17,7 +17,7 @@ const CircleNotifys = styled.div`
 `;
 export interface NotifysProps { }
 
-const CircleOfNotifys: FC<NotifysProps> = props => {
+const CircleOfNotifys: FC<NotifysProps> = () => {
   const [state] = useContext(NotifyContext);
 
   return (
