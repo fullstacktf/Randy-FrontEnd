@@ -1,5 +1,17 @@
 #! /bin/bash
 
+echo "\n Okay, vamosa darle leña al mono, comienzo haciendo la compilación de los archivos...\n"
+
+npm install && npm run build
+
+cd build
+
+ls
+
+echo "\n HASTA AQUI LA PRUEBA"
+
+exit 1
+
 echo "Deploying on digitalocean"
 
 COMMAND="cd ${REMOTE_PATH} && \
