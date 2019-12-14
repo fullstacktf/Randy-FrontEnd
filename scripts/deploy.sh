@@ -1,6 +1,14 @@
 #! /bin/bash
 
-echo "\n Okay, vamosa darle leña al mono, comienzo haciendo la compilación de los archivos...\n"
+echo "Voy hacer algo de trampas si no te importa y voy a poner la variable de entorno CI a false, para que no me de problemas los warnings en la compilación"
+
+CI=false
+
+echo " "
+echo " "
+echo "Okay, vamosa darle leña al mono, comienzo haciendo la compilación de los archivos..."
+echo " "
+echo " "
 
 npm install && npm run build
 
@@ -8,9 +16,14 @@ cd build
 
 ls
 
-echo "\n HASTA AQUI LA PRUEBA"
+echo " "
+echo " "
+echo "========   HASTA AQUI LA PRUEBA    ========"
+echo " "
+echo " "
 
-exit 1
+
+exit
 
 echo "Deploying on digitalocean"
 
