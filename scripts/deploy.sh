@@ -18,13 +18,13 @@ ls
 
 echo " "
 echo " "
-echo "========   Vale, parece que hace correctamente el buil 👷   ========"
+echo "========   Vale, parece que hace correctamente el build 👷   ========"
 echo " "
 echo " "
 
 echo " "
 echo " "
-echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean"
+echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean 💧"
 echo " "
 echo " "
 
@@ -39,7 +39,7 @@ echo " "
 
 exit
 
-echo "Deploying on digitalocean"
+echo "Deploying on digitalocean 💧"
 
 COMMAND="cd ${REMOTE_PATH} && \
         git pull && \
