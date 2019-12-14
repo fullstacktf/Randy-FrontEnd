@@ -6,7 +6,7 @@ CI=false
 
 echo " "
 echo " "
-echo "Okay, vamosa darle leña al mono 🤘, comienzo haciendo la compilación de los archivos..."
+echo "Okay, vamos a darle leña al mono 🤘, comienzo haciendo la compilación de los archivos..."
 echo " "
 echo " "
 
@@ -28,7 +28,7 @@ echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean 💧"
 echo " "
 echo " "
 
-scp -r * travis@ssh.randy.tools:var/www/randy.tools
+scp -o StrictHostKeyChecking=no -i travis-deploy-do-fron -v -r * travis@ssh.randy.tools:var/www/randy.tools
 
 
 echo " "
