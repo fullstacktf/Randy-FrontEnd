@@ -28,7 +28,7 @@ echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean 💧"
 echo " "
 echo " "
 
-scp -o StrictHostKeyChecking=no -i travis-deploy-do-fron -v -r * travis@ssh.randy.tools:var/www/randy.tools
+scp -o StrictHostKeyChecking=no -i deploy-front-travis -v -r * travis@ssh.randy.tools:var/www/randy.tools
 
 
 echo " "
@@ -49,4 +49,4 @@ COMMAND="cd ${REMOTE_PATH} && \
         echo "Procedo a crear otra carpeta build" && \
         npm run build"
 
-ssh -o StrictHostKeyChecking=no -i travis-deploy-do-fron -v ${REMOTE_USER}@${REMOTE_HOST} ${COMMAND}
+ssh -o StrictHostKeyChecking=no -i deploy-front-travis -v ${REMOTE_USER}@${REMOTE_HOST} ${COMMAND}
