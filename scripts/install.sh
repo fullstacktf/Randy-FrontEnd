@@ -33,7 +33,7 @@ echo " "
 
 eval "$(ssh-agent -s)"
 
-chmod 777 deploy_rsa
+chmod 600 deploy_rsa
 
 ssh-add deploy_rsa
 
