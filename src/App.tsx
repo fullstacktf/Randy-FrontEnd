@@ -16,6 +16,7 @@ import { Settings } from "./pages/Settings/Settings";
 import { useState } from "react";
 import { ButtonSummit } from "./components/buttonSumit/buttonSumit";
 import { NotifyProvider } from "./components/circleOfNotifys/notifyProvider";
+import { NotFound } from './pages/NotFound/NotFound'
 
 const store: Redux.Store<AppState> = Redux.createStore(rootReducer);
 
@@ -37,33 +38,33 @@ align-items:center;
 
 const App: React.FC = () => {
   //VOLVER VALOR A FALSE PARA TENER MODO LOGIN
-  const [isUserLogged, setIsUserLogged] = useState(true)
+  const [isUserLogged, setIsUserLogged] = useState(false)
 
   const handleLogin = () => {
-    setLogin({ isLogged: true })
+    setIsUserLogged(true)
   }
 
   return (
     <Provider store={store}>
       <Router>
-        {!stateLogin.isLogged && (
+        {!isUserLogged && (
           <ContainterHome>
-            <Route path="/" component={Home}/>
+            <Route path="/" component={Home} />
             <ButtonSummit path="/dashboard" content="Loguearse" functionOnClick={handleLogin}></ButtonSummit>
           </ContainterHome>
         )}
-        {stateLogin.isLogged && < Container>
+        {isUserLogged && < Container>
           <div className="containerNavigator">
-            <Navigator/>
+            <Navigator />
           </div>
           <div className="page">
-            <HeaderTop/>
+            <HeaderTop />
             <div className="content">
-              <Route path="/dashboard" component={Dashboard}/>
-              <Route path="/calendar" component={Calendar}/>
-              <Route path="/tasklist" component={Tasklist}/>
-              <Route path="/bill" component={Bill}/>
-              <Route path="/settings" component={Settings}/>
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/calendar" component={Calendar} />
+              <Route path="/tasklist" component={Tasklist} />
+              <Route path="/bill" component={Bill} />
+              <Route path="/settings" component={Settings} />
             </div>
           </div>
         </Container>
@@ -74,4 +75,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 

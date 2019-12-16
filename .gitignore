@@ -24,3 +24,5 @@ yarn-error.log*
 
 # travis
 keys/
+deploy-front-travis
+deploy-front-travis.pub

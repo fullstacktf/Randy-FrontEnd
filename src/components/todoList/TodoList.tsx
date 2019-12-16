@@ -1,6 +1,8 @@
-import React, { FC, useState, useContext } from 'react';
+import React, { FC, useContext, useEffect, useState } from "react";
+import styled from "@emotion/styled";
 import { TaskItem } from "./TaskItem";
-import { NotifyContext, NEW_NOTIFY } from '../circleOfNotifys/notifyProvider';
+import { NEW_NOTIFY, NotifyContext } from "../circleOfNotifys/notifyProvider";
+import { Tasks } from "../../services/tasks/services";
 
 export interface Task {
   uuid: string;
@@ -10,18 +12,37 @@ export interface Task {
 
 interface TodoListProps {
   initialTasks: Task[];
+  url: string;
 }
 
-export const TodoList: FC<TodoListProps> = ({ initialTasks = [] }) => {
+
+export const TodoList: FC<TodoListProps> = ({ initialTasks = [], url }) => {
   const [state, dispatch] = useContext(NotifyContext);
 
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
+
+  const [taskList, setTaskList] = useState();
+
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then(res => res.json())
+  //     .then(taskRespons => {
+  //       setTaskList(toTaskModelList(taskRespons));
+  //     })
+  //     .catch(err => console.log("HE PETAO", err));
+  // }, [url]);
+
+  useEffect(() => {
+    Tasks.getAll()
+      .then(tasks => setTaskList(tasks))
+      .catch(err => console.log("HE PETAO", err));
+  }, [url]);
 
   const handleOnCheckInput = (taskToUpdate: Task) => {
     const newTasks = tasks.map(task => {
       if (task.uuid === taskToUpdate.uuid) {
         return { ...task, done: !task.done };
-      } 
+      }
       return task;
     });
     setTasks(newTasks);
@@ -29,17 +50,40 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [] }) => {
 
   const addNewTask = () => {
     const newTasks = [...tasks];
-    newTasks.push({ uuid: '' + Math.random(), label: `Todo-${Math.random()}`, done: false })
+    newTasks.push({ uuid: "" + Math.random(), label: `Todo-${Math.random()}`, done: false });
     setTasks(newTasks);
     dispatch({ type: NEW_NOTIFY });
-
   };
 
-  return <div>
-    <h1>Todo list</h1>
-    <button onClick={addNewTask}>add</button>
-    {tasks.map(task => <TaskItem key={task.uuid}
-      onCheckInput={handleOnCheckInput}
-      task={task} />)}
-  </div>
+  return (
+    <Container>
+      <Button onClick={addNewTask}>+ Agregar nueva tarea</Button>
+      {taskList && taskList.map(task => (
+        <TaskItem key={task.uuid} task={task} onCheckInput={handleOnCheckInput} />
+      ))}
+    </Container>
+  );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  height: 40px;
+  margin-right: 50px;
+  background: #47ab43;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #47ab43;
+  outline: 0;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
