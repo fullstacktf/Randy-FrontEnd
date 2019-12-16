@@ -30,9 +30,7 @@ echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean 💧"
 echo " "
 echo " "
 
-#scp -o StrictHostKeyChecking=no -i deploy_rsa -v -r ./build/* ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
-scp -r ./build/* -o StrictHostKeyChecking=no -i deploy_rsa -v  ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
-
+scp -o StrictHostKeyChecking=no -i deploy_rsa -v -r ./build/* ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
 
 echo " "
 echo " "
