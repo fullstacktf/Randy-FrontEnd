@@ -26,7 +26,7 @@ export const Home: FC = () => {
           <LogoApp />
         </ContainerLogo>
         <RandyText>Randy</RandyText>
-        <h1>PRUEBA DE DESPLIEGUE</h1>
+        <h1>PRUEBA DE DESPLIEGUE V2.0</h1>
       </Container>
     </div>
   )

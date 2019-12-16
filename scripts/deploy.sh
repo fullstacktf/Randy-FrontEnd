@@ -34,20 +34,12 @@ scp -o StrictHostKeyChecking=no -i deploy_rsa -v -r ./build/* ${REMOTE_USER}@${R
 
 echo " "
 echo " "
-echo "========   HASTA AQUI LA PRUEBA  ========"
+echo "========   DONE  ========"
 echo " "
 echo " "
 
 exit
 
-echo "Deploying on digitalocean 💧"
 
-COMMAND="cd ${REMOTE_PATH} && \
-        git pull && \
-        npm install && \
-        echo "Borrando carpeta build" && \
-        rm -rf build/* && \
-        echo "Procedo a crear otra carpeta build" && \
-        npm run build"
 
-ssh -o StrictHostKeyChecking=no -i deploy-front-travis -v ${REMOTE_USER}@${REMOTE_HOST} ${COMMAND}
+

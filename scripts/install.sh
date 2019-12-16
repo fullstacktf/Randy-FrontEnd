@@ -7,29 +7,7 @@ echo "REMOTE_HOST = ${REMOTE_HOST}"
 
 echo -e "Host ssh.randy.tools\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
-
-echo " "
-echo "Hago el despligue de las contraseñas"
-echo " "
-
-
 openssl aes-256-cbc -K $encrypted_af8de67677e8_key -iv $encrypted_af8de67677e8_iv -in deploy_rsa.enc -out deploy_rsa -d
-
-
-echo " "
-echo "Voy a mostrar un poco el directorio en el que me encuentro y lo que tengo a ver"
-echo " "
-
-
-pwd
-
-ls
-
-
-echo " "
-echo "Las meto en el ssh-agent"
-echo " "
-
 
 eval "$(ssh-agent -s)"
 
