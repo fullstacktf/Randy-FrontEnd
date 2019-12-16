@@ -16,6 +16,8 @@ cd build
 
 ls
 
+cd ..
+
 echo " "
 echo " "
 echo "========   Vale, parece que hace correctamente el build 👷   ========"
@@ -28,9 +30,7 @@ echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean 💧"
 echo " "
 echo " "
 
-scp -r * ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
-
-#scp -o StrictHostKeyChecking=no -i deploy_rsa -v -r * ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
+scp -o StrictHostKeyChecking=no -i deploy_rsa -v -r ./build/* ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
 
 
 echo " "
