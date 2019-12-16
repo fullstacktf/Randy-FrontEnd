@@ -3,7 +3,7 @@ nodejs:
 - stable
 branches:
   only:
-  - develop
+  - master
 env:
   global:
   - REMOTE_PATH=/var/www/randy.tools
