@@ -8,7 +8,7 @@ env:
   global:
   - REMOTE_PATH=/var/www/randy.tools
   - REMOTE_USER=travis
-  - REMOTE_HOST=randy.tools
+  - REMOTE_HOST=ssh.randy.tools
 before_install:
 - bash scripts/install.sh
 after_success:

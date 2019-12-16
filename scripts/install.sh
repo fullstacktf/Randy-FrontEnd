@@ -13,7 +13,7 @@ echo "Hago el despligue de las contraseñas"
 echo " "
 echo " "
 
-openssl aes-256-cbc -K $encrypted_af8de67677e8_key -iv $encrypted_af8de67677e8_iv -in deploy_rsa.enc -out deploy_rsa -d
+openssl aes-256-cbc -K $encrypted_af8de67677e8_key -iv $encrypted_af8de67677e8_iv -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
 
 echo " "
 echo " "
@@ -33,9 +33,9 @@ echo " "
 
 eval "$(ssh-agent -s)"
 
-chmod 600 deploy_rsa
+chmod 600 ~/.ssh/deploy_rsa
 
-ssh-add deploy_rsa
+ssh-add ~/.ssh/deploy_rsa
 
 echo " "
 echo " "
