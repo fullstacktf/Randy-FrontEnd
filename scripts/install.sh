@@ -15,6 +15,15 @@ echo " "
 
 openssl aes-256-cbc -K $encrypted_af8de67677e8_key -iv $encrypted_af8de67677e8_iv -in deploy_rsa.enc -out deploy_rsa -d
 
+echo " "
+echo " "
+echo "Voy a mostrar un poco el directorio en el que me encuentro y lo que tengo a ver"
+echo " "
+echo " "
+
+pwd
+
+ls
 
 echo " "
 echo " "
