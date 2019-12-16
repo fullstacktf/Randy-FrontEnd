@@ -28,7 +28,7 @@ echo "Vamos ahora a probar a realizar el despliegue en Ditital Ocean 💧"
 echo " "
 echo " "
 
-scp -o StrictHostKeyChecking=no -i deploy-front-travis -v -r * travis@ssh.randy.tools:var/www/randy.tools
+scp -o StrictHostKeyChecking=no -i deploy_rsa -v -r * travis@ssh.randy.tools:var/www/randy.tools
 
 
 echo " "

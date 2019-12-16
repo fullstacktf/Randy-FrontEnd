@@ -59,7 +59,7 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [], url }) => {
     <Container>
       <Button onClick={addNewTask}>+ Agregar nueva tarea</Button>
       {taskList && taskList.map(task => (
-        <TaskItem key={task.uuid} onCheckInput={handleOnCheckInput} task={task}/>
+        <TaskItem key={task.uuid} task={task} onCheckInput={handleOnCheckInput} />
       ))}
     </Container>
   );

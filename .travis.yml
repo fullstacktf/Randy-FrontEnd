@@ -10,8 +10,6 @@ env:
   - REMOTE_USER=travis
   - REMOTE_HOST=randy.tools
 before_install:
-- openssl aes-256-cbc -K $encrypted_af8de67677e8_key -iv $encrypted_af8de67677e8_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
 - bash scripts/install.sh
 after_success:
 - bash scripts/deploy.sh
