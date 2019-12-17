@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { NotifyContext, NEW_NOTIFY } from "./notifyProvider";
 
 const ButtonNotify = styled.button`
@@ -10,18 +10,17 @@ const ButtonNotify = styled.button`
   color: white;
   border-radius: 10px;
   border: 1px solid #47ab43;
-  outline:none;
+  outline: none;
   cursor: pointer;
   &:hover {
     opacity: 0.8;
   }
 `;
 
-
 export const ButtonNewNotify = props => {
   const [state, dispatch] = useContext(NotifyContext);
 
-  const handleNewNotify = () => dispatch({ type: NEW_NOTIFY })
+  const handleNewNotify = () => dispatch({ type: NEW_NOTIFY });
 
   return (
     <>
@@ -29,4 +28,3 @@ export const ButtonNewNotify = props => {
     </>
   );
 };
-
