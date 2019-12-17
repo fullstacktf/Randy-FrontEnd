@@ -39,9 +39,9 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [], url }) => {
   };
 
   const addNewTask = () => {
-    const newTasks = [...tasks];
-    newTasks.push({ uuid: "" + Math.random(), label: `Todo-${Math.random()}`, done: false });
-    setTasks(newTasks);
+    // const newTasks = [...tasks];
+    // newTasks.push({ uuid: "" + Math.random(), label: `Todo-${Math.random()}`, done: false });
+    // setTasks(newTasks);
     dispatch({ type: NEW_NOTIFY });
   };
 
