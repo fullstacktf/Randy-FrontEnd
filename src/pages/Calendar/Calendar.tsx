@@ -5,6 +5,8 @@ import styled from "@emotion/styled";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 90%;
+  align-items: center;
 `;
 
 export const Calendar: FC = () => {
@@ -16,7 +18,8 @@ export const Calendar: FC = () => {
           📅
         </span>{" "}
       </h1>
-      <CalendarMonth></CalendarMonth>
+      <img src="https://icalendario.net/media/imprimir/2019/mensual/diciembre/calendario-diciembre-2019.png" alt="calendario" width="50%" />
+      {/* <CalendarMonth></CalendarMonth> */}
     </Container>
   );
 };
