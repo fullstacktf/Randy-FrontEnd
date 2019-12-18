@@ -9,7 +9,7 @@ export const Achievements: FC<AchievementsProps> = props => {
   return (
     <Container>
       <h1>Logros</h1>
-      <ContainerAchievements>{achievementList && achievementList.map(item => <AchievmentItem achievement={item} className={item.unlock} />)}</ContainerAchievements>
+      <ContainerAchievements>{achievementList && achievementList.map(item => <AchievmentItem key={item.id} achievement={item} className={item.unlock} />)}</ContainerAchievements>
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { shallow, mount, render } from "enzyme";
+import { fireEvent, render } from "@testing-library/react";
 import { Hello } from "../hello";
 
 const props = {
@@ -7,12 +7,12 @@ const props = {
   srcAvatar: "../../../assets/avatar-man-1.jpg"
 };
 
-describe("Hello", () => {
+xdescribe("Hello", () => {
   describe("Render", () => {
-    xtest("Should render a h3 text with the name Carlos", () => {
-      const wrapper = shallow(<Hello {...props}></Hello>);
-      console.log('================================>', wrapper);
-      expect(wrapper).toBe("Hola Carlos");
+    test("Should render a h3 text with the name Carlos", async () => {
+      const { queryByText } = render(<Hello {...props} />);
+      const items = await queryByText(/Carlos/i);
+      expect(items).toBe("Carlos");
     });
   });
 });
