@@ -31,7 +31,7 @@ const ContainterHome = styled.div`
 
 const App: React.FC = () => {
   //VOLVER VALOR A FALSE PARA TENER MODO LOGIN
-  const [isUserLogged, setIsUserLogged] = useState(true);
+  const [isUserLogged, setIsUserLogged] = useState(false);
 
   const handleLogin = () => {
     setIsUserLogged(true);
