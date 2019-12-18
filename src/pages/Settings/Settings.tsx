@@ -11,7 +11,14 @@ export const Settings: FC = () => {
         </span>{" "}
       </h1>
       <Footer>
-        <a href="https://github.com/RubenZagon"> Hecho con amor 💚 por Rubén Zamora</a>
+        <a href="https://github.com/RubenZagon">
+          {" "}
+          Hecho con amor{" "}
+          <span role="img" aria-label="corazón verde">
+            💚
+          </span>{" "}
+          por Rubén Zamora
+        </a>
       </Footer>
     </Container>
   );

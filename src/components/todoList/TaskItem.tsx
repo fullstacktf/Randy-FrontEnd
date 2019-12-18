@@ -42,6 +42,7 @@ const Container = styled.div`
   }
 
   & input[type="checkbox"] + label span {
+    background: lightgray;
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -53,7 +54,7 @@ const Container = styled.div`
   }
 
   & input[type="checkbox"]:checked + label span {
-    background: #47ab43;
+    background: red;
     background-size: cover;
   }
 `;

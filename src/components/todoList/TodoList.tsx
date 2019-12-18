@@ -15,22 +15,12 @@ interface TodoListProps {
   url: string;
 }
 
-
 export const TodoList: FC<TodoListProps> = ({ initialTasks = [], url }) => {
   const [state, dispatch] = useContext(NotifyContext);
 
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
 
   const [taskList, setTaskList] = useState();
-
-  // useEffect(() => {
-  //   fetch(url)
-  //     .then(res => res.json())
-  //     .then(taskRespons => {
-  //       setTaskList(toTaskModelList(taskRespons));
-  //     })
-  //     .catch(err => console.log("HE PETAO", err));
-  // }, [url]);
 
   useEffect(() => {
     Tasks.getAll()
@@ -49,18 +39,16 @@ export const TodoList: FC<TodoListProps> = ({ initialTasks = [], url }) => {
   };
 
   const addNewTask = () => {
-    const newTasks = [...tasks];
-    newTasks.push({ uuid: "" + Math.random(), label: `Todo-${Math.random()}`, done: false });
-    setTasks(newTasks);
+    // const newTasks = [...tasks];
+    // newTasks.push({ uuid: "" + Math.random(), label: `Todo-${Math.random()}`, done: false });
+    // setTasks(newTasks);
     dispatch({ type: NEW_NOTIFY });
   };
 
   return (
     <Container>
       <Button onClick={addNewTask}>+ Agregar nueva tarea</Button>
-      {taskList && taskList.map(task => (
-        <TaskItem key={task.uuid} task={task} onCheckInput={handleOnCheckInput} />
-      ))}
+      {taskList && taskList.map(task => <TaskItem key={task.uuid} task={task} onCheckInput={handleOnCheckInput} />)}
     </Container>
   );
 };

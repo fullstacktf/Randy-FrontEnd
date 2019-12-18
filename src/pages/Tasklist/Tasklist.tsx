@@ -1,20 +1,9 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import styled from "@emotion/styled";
 import { TodoList } from "../../components/todoList/TodoList";
-
-let tareasPrevias = [
-  { uuid: "123123421", label: "Tirar la basura", done: false },
-  { uuid: "646456", label: "Fregar la loza", done: false },
-  { uuid: "74879898", label: "Ir a recoger el pan a la panadería", done: false },
-  { uuid: "099808", label: "Pagar alquiler", done: false }
-];
+import { Achievements } from "../../components/achievements/achievements";
 
 export const Tasklist: FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [taskList, setTaskList] = useState();
-
-  useEffect(() => {}, []);
-
   return (
     <Container>
       <h1>
@@ -23,7 +12,10 @@ export const Tasklist: FC = () => {
           📌
         </span>{" "}
       </h1>
-      <TodoList initialTasks={tareasPrevias} url="http://randy.tools/api/tasksList" />
+      <ContainerBody>
+        <TodoList initialTasks={[]} url="http://randy.tools/api/tasksList" />
+        <Achievements />
+      </ContainerBody>
     </Container>
   );
 };
@@ -31,4 +23,11 @@ export const Tasklist: FC = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 90%;
 `;
+
+const ContainerBody = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+`

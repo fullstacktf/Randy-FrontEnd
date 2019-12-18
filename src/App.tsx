@@ -1,10 +1,7 @@
 import * as React from "react";
-import * as Redux from 'redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Provider } from "react-redux";
 import "./css/App.css";
 import styled from "@emotion/styled";
-import rootReducer, { AppState } from './reducers'
 import Navigator from "./components/navigator/navigator";
 import { HeaderTop } from "./components/header/header";
 import { Home } from "./pages/Home/Home";
@@ -15,10 +12,6 @@ import { Bill } from "./pages/Bill/Bill";
 import { Settings } from "./pages/Settings/Settings";
 import { useState } from "react";
 import { ButtonSummit } from "./components/buttonSumit/buttonSumit";
-import { NotifyProvider } from "./components/circleOfNotifys/notifyProvider";
-import { NotFound } from './pages/NotFound/NotFound'
-
-const store: Redux.Store<AppState> = Redux.createStore(rootReducer);
 
 const Container = styled.div`
   background: white;
@@ -28,32 +21,32 @@ const Container = styled.div`
 `;
 
 const ContainterHome = styled.div`
-height:100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-content:center;
-align-items:center;
-`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+`;
 
 const App: React.FC = () => {
   //VOLVER VALOR A FALSE PARA TENER MODO LOGIN
-  const [isUserLogged, setIsUserLogged] = useState(false)
+  const [isUserLogged, setIsUserLogged] = useState(false);
 
   const handleLogin = () => {
-    setIsUserLogged(true)
-  }
+    setIsUserLogged(true);
+  };
 
   return (
-    <Provider store={store}>
-      <Router>
-        {!isUserLogged && (
-          <ContainterHome>
-            <Route path="/" component={Home} />
-            <ButtonSummit path="/dashboard" content="Loguearse" functionOnClick={handleLogin}></ButtonSummit>
-          </ContainterHome>
-        )}
-        {isUserLogged && < Container>
+    <Router>
+      {!isUserLogged && (
+        <ContainterHome>
+          <Route path="/" component={Home} />
+          <ButtonSummit path="/dashboard" content="Loguearse" functionOnClick={handleLogin}></ButtonSummit>
+        </ContainterHome>
+      )}
+      {isUserLogged && (
+        <Container>
           <div className="containerNavigator">
             <Navigator />
           </div>
@@ -68,12 +61,9 @@ const App: React.FC = () => {
             </div>
           </div>
         </Container>
-        }
-      </Router>
-    </Provider>
+      )}
+    </Router>
   );
 };
 
 export default App;
-
-
