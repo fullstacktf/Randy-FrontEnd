@@ -1,17 +1,15 @@
 type frecuency = "Mensual" | "Trimestral";
 type colorCard = "lightcoral" | "LemonChiffon" | "LightGreen" | "lightcyan";
 
-
 export interface BillCardInterface {
-  title: string,
-  cost: number,
-  frecuency: frecuency,
-  color: colorCard,
-  payer: string[]
-  image: string,
+  title: string;
+  cost: number;
+  frecuency: frecuency;
+  color: colorCard;
+  payer: string[];
+  image: string;
   paymentDivision: number;
 }
-
 
 export const billCardList: BillCardInterface[] = [
   {
@@ -41,15 +39,14 @@ export const billCardList: BillCardInterface[] = [
     image: "https://image.flaticon.com/icons/png/512/2246/2246613.png",
     paymentDivision: paymentDivisionCalculate(53)
   }
-
-]
+];
 
 function paymentDivisionCalculate(cost: number, payer?: []) {
   const paymentsGroup = ["ruben", "manz", "Raul"];
 
-  return Math.round(cost / paymentsGroup.length)
+  return Math.round(cost / paymentsGroup.length);
 }
-
+// eslint-disable-next-line
 function selectImage(title: string): string {
   switch (title) {
     case "Alquiler":

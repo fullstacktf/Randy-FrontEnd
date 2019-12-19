@@ -21,7 +21,7 @@ const avatarPrint = (
 );
 
 export const Hello: FC<HelloProps> = ({ name, srcAvatar }) => {
-  const [state, dispatch] = useContext(NotifyContext);
+  const [state, dispatch] = useContext(NotifyContext); // eslint-disable-next-line
 
   const handleReadNotifys = () => dispatch({ type: RESET_NOTIFYS });
 

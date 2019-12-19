@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { ButtonNewNotify } from "../../components/circleOfNotifys/buttonNewNotify";
 
 export const Dashboard: FC = () => {
   return (

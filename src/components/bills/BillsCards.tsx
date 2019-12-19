@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"; // eslint-disable-next-line
 import { billCardList } from "./billCardsList";
 import { BillCard } from "./billcard";
 

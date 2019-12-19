@@ -1,5 +1,4 @@
-import React, { useReducer, useState } from "react";
-import { Tasks } from "../../services/tasks/services";
+import React, { useReducer } from "react";
 
 // const [tasks, setTasks] = useState();
 // const [taskList, setTaskList] = useState();
